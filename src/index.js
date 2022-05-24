@@ -43,17 +43,51 @@ import ReactDom from 'react-dom';
 // }
 
 //nested components, React Tools 
-function Greeting(){
-  return (<div>
-    <Person/>
-    <Message/>
-  </div>
+// function Greeting(){
+//   return (<div>
+//     <Person/>
+//     <Message/>
+//   </div>
+//   );
+// } 
+
+// const Person = () => <h2>John Doe</h2>;
+// const Message = () => {
+//   return <p>This is my message</p>;
+// };
+
+//Mini Book project
+
+function BookList() {
+  return (
+    <section>
+      <Book/>
+      <Book/>
+      <Book/>
+      <Book/>
+      <Book/>
+    </section>
   );
-} 
+}
 
-const Person = () => <h2>John Doe</h2>;
-const Message = () => {
-  return <p>This is my message</p>;
-};
+const Book = () => {
+  return (
+  <article>
+    <Image/>
+    <Title/>
+    <Author/>
+    </article>
+  );
+}
 
-ReactDom.render(<Greeting/>, document.getElementById('root'));
+const Image = () => {
+  return <img src='https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL604_SR604,400_.jpg' alt=''></img>
+}
+
+const Title = () => {
+  return <h1>I Love You to the Moon and Back</h1>
+}
+
+const Author = () => <h4>Amelia Hepworth</h4>
+
+ReactDom.render(<BookList/>, document.getElementById('root'));
