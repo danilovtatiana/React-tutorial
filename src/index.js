@@ -27,19 +27,33 @@ import ReactDom from 'react-dom';
 //close every element (even image)
 //formatting
 
+// function Greeting(){
+//   return (
+//     <div>
+//       <article>hello world</article> 
+//       <ul>
+//         <li>
+//           <a href='#'>hello world</a>
+//         </li>
+//         <img src='' alt=''></img>
+//         <input type='text' name='' id=''></input>
+//       </ul>
+//     </div>
+//   );
+// }
+
+//nested components, React Tools 
 function Greeting(){
-  return (
-    <div>
-      <article>hello world</article> 
-      <ul>
-        <li>
-          <a href='#'>hello world</a>
-        </li>
-        <img src='' alt=''></img>
-        <input type='text' name='' id=''></input>
-      </ul>
-    </div>
+  return (<div>
+    <Person/>
+    <Message/>
+  </div>
   );
-}
+} 
+
+const Person = () => <h2>John Doe</h2>;
+const Message = () => {
+  return <p>This is my message</p>;
+};
 
 ReactDom.render(<Greeting/>, document.getElementById('root'));
