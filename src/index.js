@@ -61,22 +61,42 @@ import './index.css';
 // };
 
 //Mini Book project
+//setup vars
+
+const firstBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL604_SR604,400_.jpg',
+  title: 'I Love You to the Moon and Back',
+  author: 'Amelia Hepworth'
+}
+
+const secondBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/91F9I22Ha-L._AC_UL906_SR906,600_.jpg',
+  title: 'First Grade, Here I Come!',
+  author: 'D.J. Steinberg'
+}
 
 function BookList() {
   return (
     <section className='booklist'>
-      <Book/>
+      <Book 
+      img={firstBook.img}
+      title={firstBook.title}
+      author={firstBook.author}/>
+      <Book 
+      img={secondBook.img}
+      title={secondBook.title}
+      author={secondBook.author}/>
     </section>
   );
 }
-const author = 'Amelia Hepworth'
-const Book = () => {
-   const title = 'I Love You to the Moon and Back'
+
+const Book = (props) => {
+   
   return (
   <article className='book'>
-    <img src='https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL604_SR604,400_.jpg' alt=''></img>
-    <h1>{title}</h1>
-    <h4>{author.toUpperCase()}</h4>
+    <img src={props.img} alt=''></img>
+    <h1>{props.title}</h1>
+    <h4>{props.author}</h4>
     </article>
   );
 }
